@@ -38,13 +38,15 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 	private String categoryId;
 	private Map<String, Object> session;
 
-	//入力された文字列をinputCheckerで判定させて、ErrorMessageListに結果を代入する。
-
 	public String execute() {
+
+		//ログインしていない状態で推移できないようにする。
 
 		if(!session.containsKey("loginId")){
 			return LOGIN;
 		}
+
+		//入力された文字列をinputCheckerで判定させて、ErrorMessageListに結果を代入する。
 
 		String result = ERROR;
 		InputChecker inputChecker = new InputChecker();

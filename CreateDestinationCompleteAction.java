@@ -31,13 +31,15 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 	private String userAddress;
 	private String categoryId;
 
-	//1つ以上登録されたら成功を返す。
-
 	public String execute() {
+
+		//ログインしていない状態で推移できないようにする。
 
 		if(!session.containsKey("loginId")){
 			return LOGIN;
 		}
+
+		//宛先情報が全て登録されたらSUCCESSを返す。
 
 		if(!session.containsKey("checked")) {
 			return LOGIN;

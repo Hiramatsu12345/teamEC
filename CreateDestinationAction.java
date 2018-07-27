@@ -30,9 +30,9 @@ public class CreateDestinationAction extends ActionSupport implements SessionAwa
 	private String telNumber;
 	private String userAddress;
 
-	//性別Listに値を追加し、sessionの中身を削除。
-
 	public String execute() {
+
+		//ログインしていない状態で宛先登録に推移できないようにする
 
 		if(!session.containsKey("loginId")){
 			return ERROR;
@@ -42,6 +42,8 @@ public class CreateDestinationAction extends ActionSupport implements SessionAwa
 		if(session.containsKey("status")) {
 			return LOGIN;
 		}
+
+		//性別Listに値を追加し、sessionの中身を削除。
 
 		String result = ERROR;
 		sexList.add(MALE);
