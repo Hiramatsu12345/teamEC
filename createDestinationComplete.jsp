@@ -12,12 +12,12 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-	<div id="contentsB">
+	<div id="contents">
 		<h1>宛先登録完了画面</h1>
 
-		<h2>宛先登録が完了しました。</h2>
+		<h2>宛先登録が完了しました</h2>
 		<br>
-		<div class="success"><h3>3秒後に確認画面に戻ります。</h3></div>
+		<div class="success"><h3>3秒後に確認画面に戻ります</h3></div>
 
 	</div>
 	<s:include value="footer.jsp" />
